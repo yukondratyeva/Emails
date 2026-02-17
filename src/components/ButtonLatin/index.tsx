@@ -6,7 +6,10 @@ import {
 } from '@figmint/react'
 
 interface ButtonLatinProps {
-  'Property 1'?: 'Dark' | 'Light' | 'Tertiary' | 'External'
+  Text?: string
+  Text2?: string
+  Text3?: string
+  Style?: 'Dark' | 'Light' | 'Tertiary' | 'External'
   elementProps?: {
     [elementId: string]: Record<string, any> & {
       className?: string
@@ -20,7 +23,12 @@ const variantButtonLatinDark = (
   incomingProps: ButtonLatinProps & { eventHandlers?: Record<string, any> }
 ) => {
   const { props } = useProps(
-    { 'Property 1': 'Dark' } as ButtonLatinProps,
+    {
+      Text: 'Get the app',
+      Text2: 'Get the app',
+      Text3: 'Get the app',
+      Style: 'Dark',
+    } as ButtonLatinProps,
     incomingProps
   )
   const render = (
@@ -56,7 +64,7 @@ const variantButtonLatinDark = (
           'font-family': 'var(--font-Family-CTA, Tahoma)',
         },
       },
-      'Get the app'
+      props['Text']
     )
   )
 }
@@ -65,7 +73,12 @@ const variantButtonLatinLight = (
   incomingProps: ButtonLatinProps & { eventHandlers?: Record<string, any> }
 ) => {
   const { props } = useProps(
-    { 'Property 1': 'Dark' } as ButtonLatinProps,
+    {
+      Text: 'Get the app',
+      Text2: 'Get the app',
+      Text3: 'Get the app',
+      Style: 'Dark',
+    } as ButtonLatinProps,
     incomingProps
   )
   const render = (
@@ -101,7 +114,7 @@ const variantButtonLatinLight = (
           'font-family': 'var(--font-Family-CTA, Tahoma)',
         },
       },
-      'Get the app'
+      props['Text']
     )
   )
 }
@@ -110,7 +123,12 @@ const variantButtonLatinTertiary = (
   incomingProps: ButtonLatinProps & { eventHandlers?: Record<string, any> }
 ) => {
   const { props } = useProps(
-    { 'Property 1': 'Dark' } as ButtonLatinProps,
+    {
+      Text: 'Get the app',
+      Text2: 'Get the app',
+      Text3: 'Get the app',
+      Style: 'Dark',
+    } as ButtonLatinProps,
     incomingProps
   )
   const render = (
@@ -146,7 +164,7 @@ const variantButtonLatinTertiary = (
           'font-family': 'var(--font-Family-CTA, Tahoma)',
         },
       },
-      'Get the app'
+      props['Text']
     )
   )
 }
@@ -155,7 +173,12 @@ const variantButtonLatinExternal = (
   incomingProps: ButtonLatinProps & { eventHandlers?: Record<string, any> }
 ) => {
   const { props } = useProps(
-    { 'Property 1': 'Dark' } as ButtonLatinProps,
+    {
+      Text: 'Get the app',
+      Text2: 'Get the app',
+      Text3: 'Get the app',
+      Style: 'Dark',
+    } as ButtonLatinProps,
     incomingProps
   )
   const render = (
@@ -191,7 +214,7 @@ const variantButtonLatinExternal = (
           'font-family': 'var(--font-Family-CTA, Tahoma)',
         },
       },
-      'Get the app'
+      props['Text']
     )
   )
 }
@@ -208,27 +231,32 @@ const ButtonLatinPermutations = new Map<
 
 const ButtonLatin = (incomingProps: ButtonLatinProps) => {
   const { props } = useProps(
-    { 'Property 1': 'Dark' } as ButtonLatinProps,
+    {
+      Text: 'Get the app',
+      Text2: 'Get the app',
+      Text3: 'Get the app',
+      Style: 'Dark',
+    } as ButtonLatinProps,
     incomingProps
   )
   const ButtonLatinVariantConfig = [
     {
-      params: { 'Property 1': 'Dark' },
+      params: { Style: 'Dark' },
       interactions: undefined,
       rootElementId: '4544:29722',
     },
     {
-      params: { 'Property 1': 'Light' },
+      params: { Style: 'Light' },
       interactions: undefined,
       rootElementId: '4544:29724',
     },
     {
-      params: { 'Property 1': 'Tertiary' },
+      params: { Style: 'Tertiary' },
       interactions: undefined,
       rootElementId: '4544:29726',
     },
     {
-      params: { 'Property 1': 'External' },
+      params: { Style: 'External' },
       interactions: undefined,
       rootElementId: '4544:29728',
     },
@@ -238,7 +266,7 @@ const ButtonLatin = (incomingProps: ButtonLatinProps) => {
     variants: ButtonLatinVariantConfig,
     props: props as Record<string, string | undefined>,
     permutations: ButtonLatinPermutations,
-    dimensionOrder: ['Property 1'],
+    dimensionOrder: ['Style'],
   })
 
   return <>{content}</>
