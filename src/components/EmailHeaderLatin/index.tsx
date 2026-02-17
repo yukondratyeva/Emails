@@ -9,6 +9,8 @@ interface EmailHeaderLatinProps {
   'Show Button'?: boolean
   'Show Image'?: boolean
   'Show extra block'?: boolean
+  Text?: string
+  Description?: string
   elementProps?: {
     [elementId: string]: Record<string, any> & {
       className?: string
@@ -25,6 +27,9 @@ const EmailHeaderLatin = (incomingProps: EmailHeaderLatinProps) => {
       'Show Button': true,
       'Show Image': true,
       'Show extra block': true,
+      Text: 'Your device is trusted',
+      Description:
+        'Your device has been successfully marked as trusted. You can now use it to sign in and make transactions securely',
     } as EmailHeaderLatinProps,
     incomingProps
   )
@@ -104,7 +109,7 @@ const EmailHeaderLatin = (incomingProps: EmailHeaderLatinProps) => {
                         'url(',
                         {
                           type: 'asset-reference',
-                          value: '76d87819-02e6-48fd-b025-32a5c9be30d6.png',
+                          value: '30448b9c-618e-420f-bb8e-61040db861d7.png',
                         },
                         ') 50% / ',
                         'cover',
@@ -141,7 +146,7 @@ const EmailHeaderLatin = (incomingProps: EmailHeaderLatinProps) => {
                   'word-wrap': 'break-word',
                 },
               },
-              'Your device is trusted'
+              props['Text']
             ),
             render(
               'p',
@@ -156,7 +161,7 @@ const EmailHeaderLatin = (incomingProps: EmailHeaderLatinProps) => {
                   'word-wrap': 'break-word',
                 },
               },
-              'Your device has been successfully marked as trusted. You can now use it to sign in and make transactions securely'
+              props['Description']
             )
           )
         ),
