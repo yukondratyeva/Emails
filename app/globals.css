@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+
+  --color-tui-background-page: #F5F3F0;
+  --color-tui-background-general: #F0EDEA;
+  --color-tui-background-card: #FFFFFF;
+  --color-tui-background-control-primary: #1A1919;
+  --color-tui-background-control-secondary: #F0EDEA;
+  --color-tui-background-negative-muted: #FFE8E0;
+  --color-tui-background-accent: #6CFF93;
+
+  --color-tui-front-primary: #1A1919;
+  --color-tui-front-secondary: #858280;
+  --color-tui-front-accent: #3D9B58;
+  --color-tui-invert-front-primary: #FFFFFF;
+
+  --color-tui-line-primary: #D6D3D0;
+}
